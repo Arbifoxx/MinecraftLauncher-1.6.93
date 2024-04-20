@@ -35,3 +35,4 @@ The commands must be run in the following order to build from source:
 - `./genredist.sh` (optional)
   - Make sure you've run `git submodule update --init` as this script uses the `AutoOL` submodule.
   - Generates the redistributable JAR - Do not distribute the JARs in `olauncher/target`!
+3. You can either run the MinecraftLauncher-1.6.93-redist.jar with `java -jar MinecraftLauncher-1.6.93-redist.jar` or the MinecraftLauncher-1.6.93.jar inside olauncher/target/ with `java -jar olauncher/target/MinecraftLauncher-1.6.93.jar`
