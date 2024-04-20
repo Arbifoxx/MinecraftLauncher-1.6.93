@@ -928,7 +928,7 @@ index 83bd084..79799e0 100644
      }
  
      private void initInterface() {
-+        setTitle("OLauncher Login");
++        setTitle("Minercraft Launcher Login");
 +        setResizable(false);
          setModal(true);
          setModalityType(ModalityType.APPLICATION_MODAL);

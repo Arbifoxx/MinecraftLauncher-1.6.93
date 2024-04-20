@@ -1407,7 +1407,7 @@ index 0000000..97e9988
 +            engine = webView.getEngine();
 +            webView.setVisible(true);
 +            webView.setContextMenuEnabled(false);
-+            webView.getEngine().setUserAgent("OLauncher/1.6.93");
++            webView.getEngine().setUserAgent("MinecraftLauncher/1.6.93");
 +
 +            WebConsoleListener.setDefaultListener(new WebConsoleListener() {
 +                @Override
@@ -1476,7 +1476,7 @@ index 0000000..97e9988
 +            try {
 +                URL urlObj = new URL(url);
 +                HttpURLConnection conn = (HttpURLConnection)urlObj.openConnection();
-+                conn.addRequestProperty("User-Agent", "OLauncher/1.6.93");
++                conn.addRequestProperty("User-Agent", "MinecraftLauncher/1.6.93");
 +                try (InputStream is = conn.getInputStream()) {
 +                    String s = IOUtils.toString(is, StandardCharsets.UTF_8);
 +
