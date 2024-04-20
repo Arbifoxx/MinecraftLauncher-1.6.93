@@ -1,9 +1,9 @@
-# olauncher
-The old launcher we all know and love with the quality-of-life features of the new launcher. This aims to support java 8 through modern java.
+# Minecraft Launcher 1.6.93
+The old launcher we all know and love with the quality-of-life features of the new launcher. This aims to support java 8 through modern java. A fork of OLauncher to restore the former glory of the jar launcher, like a snapsht from the past.
 
 ## How to use
-1. Go to the [latest release](https://github.com/olauncher/olauncher/releases/latest)
-2. Download the `olauncher-xxx-redist.jar` file
+1. Go to the [latest release](https://github.com/waterdragon78/MinecraftLauncher-1.6.93/releases/latest)
+2. Download the `MinecraftLauncher-xxx-redist.jar` file
 3. Run it
 
 ## Features
@@ -21,6 +21,7 @@ The old launcher we all know and love with the quality-of-life features of the n
 - Support demo users (if they have a Microsoft account but no Minecraft profile)
 
 ## How to build from source
+Run compile.sh (easiest and recommended) OR the steps below:
 The commands must be run in the following order to build from source:
 - `decompile.sh`
   - Downloads original jar and decompiles it
