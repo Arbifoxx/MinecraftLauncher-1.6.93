@@ -21,16 +21,18 @@ The old launcher we all know and love with the quality-of-life features of the n
 - Support demo users (if they have a Microsoft account but no Minecraft profile)
 
 ## How to build from source
-Run compile.sh (easiest and recommended) OR the steps below:
+1. Run `git clone https://github.com/waterdragon78/MinecraftLauncher-1.6.93`
+2. Run `cd MinecraftLauncher-1.6.93`
+3. Run `./compile.sh` (easiest and recommended) OR the steps below:
 The commands must be run in the following order to build from source:
-- `decompile.sh`
+- `./decompile.sh`
   - Downloads original jar and decompiles it
-- `init.sh`
+- `./init.sh`
   - Turns decompiled sources into a git repository
-- `applyPatches.sh`
+- `./applyPatches.sh`
   - Applies OLauncher patches to the decompiled sources
 - `mvn clean package`
   - Compiles the patched launcher
-- `genredist.sh` (optional)
+- `./genredist.sh` (optional)
   - Make sure you've run `git submodule update --init` as this script uses the `AutoOL` submodule.
   - Generates the redistributable JAR - Do not distribute the JARs in `olauncher/target`!
