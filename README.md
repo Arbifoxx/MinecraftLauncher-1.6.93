@@ -22,6 +22,9 @@ The old launcher we all know and love with the quality-of-life features of the n
 
 ## How to build from source
 NOTE: You need jdk (I used openjdk17), git, and maven.
+If it fails theres a chance you have to tell git who you are, I did it like this:
+`git config --global user.email "you@example.com"`
+`git config --global user.name "Your Name"`
 1. Run `git clone https://github.com/waterdragon78/MinecraftLauncher-1.6.93 && cd MinecraftLauncher-1.6.93`
 2. Run `./compile.sh` (easiest and recommended) OR the steps below:
 The commands must be run in the following order to build from source:
