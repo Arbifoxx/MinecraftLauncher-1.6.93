@@ -32,9 +32,8 @@ jobs:
         run: |
           git config --global commit.gpgsign false && git config --global user.email MinecraftLauncher@example.com && git config --global user.name MinecraftLauncher
           ./compile.sh
-            - name: Upload redistributable
-      - name: Upload Redist
+      - name: Upload redistributable
         uses: actions/upload-artifact@v4
         with:
           name: Redistributable
-          path: MinecraftLauncher1.6.93-*-redist.jar
+          path: m*redist.jar
