@@ -1,5 +1,5 @@
 # Minecraft Launcher 1.6.93
-The old launcher we all know and love with the quality-of-life features of the new launcher. This aims to support java 8 through modern java. A fork of OLauncher to restore the former glory of the jar launcher, like a snapsht from the past.
+The old launcher we all know and love with the quality-of-life features of the new launcher. This aims to support java 8 through modern java. A fork of OLauncher to restore the former glory of the jar launcher, like a snapshot from the past.
 
 ## How to use
 1. Go to the [latest release](https://github.com/waterdragon78/MinecraftLauncher-1.6.93/releases/latest)
