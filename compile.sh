@@ -5,9 +5,6 @@ if [ ! -f ./AutoOL/pom.xml ]; then
 	echo
 	rm -rf AutoOL
 	git clone https://github.com/waterdragon78/AutoOL
-	cd AutoOL
-	git checkout 94926ba4f5cab31053465d5d9dee320264f97cfd
-	cd ..
 fi
 echo
 echo "Done! Proceeding with compilation..."
