@@ -326,13 +326,13 @@ index 0000000..6ba32c4
 +
 +    <parent>
 +        <groupId>dev.figboot</groupId>
-+        <artifactId>olauncher-parent</artifactId>
++        <artifactId>minecraftlauncher-parent</artifactId>
 +        <version>0.1.0</version>
 +        <relativePath>../pom.xml</relativePath>
 +    </parent>
 +
-+    <artifactId>olauncher</artifactId>
-+    <version>1.7.3_01</version>
++    <artifactId>MinecraftLauncher</artifactId>
++    <version>1.6.93</version>
 +
 +    <properties>
 +        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

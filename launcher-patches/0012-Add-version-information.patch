@@ -43,7 +43,7 @@ index 0000000..6112721
 +    private static final LauncherVersion INSTANCE;
 +
 +    public static String getLauncherName() {
-+        return "OLauncher";
++        return "Minecraft Launcher 1.6.93";
 +    }
 +
 +    public static String getVersion() {
@@ -174,8 +174,8 @@ index cc91b34..fff6d93 100644
          var10.mkdirs();
          LOGGER.debug("About to create JFrame.");
          JFrame var12 = new JFrame();
--        var12.setTitle("OLauncher " + LauncherConstants.getVersionName() + LauncherConstants.PROPERTIES.getEnvironment().getTitle());
-+        var12.setTitle(LauncherVersion.getLauncherName() + " " + LauncherVersion.getVersion() + LauncherConstants.PROPERTIES.getEnvironment().getTitle()); // olauncher - update version
+-        var12.setTitle("Minecraft Launcher 1.6.93");
++        var12.setTitle("Minecraft Launcher 1.6.93");
          var12.setPreferredSize(new Dimension(900, 580));
  
          try {
@@ -196,8 +196,8 @@ index 7cbae64..524c1f7 100644
  
      public void initializeFrame() {
          this.frame.getContentPane().removeAll();
--        this.frame.setTitle("OLauncher " + LauncherConstants.getVersionName() + LauncherConstants.PROPERTIES.getEnvironment().getTitle());
-+        this.frame.setTitle(LauncherVersion.getLauncherName() + " " + LauncherVersion.getVersion() + LauncherConstants.PROPERTIES.getEnvironment().getTitle()); // olauncher - update version
+-        this.frame.setTitle("Minecraft Launcher 1.6.93");
++        this.frame.setTitle("Minecraft Launcher 1.6.93");
          this.frame.setPreferredSize(new Dimension(900, 580));
          this.frame.setDefaultCloseOperation(2);
          this.frame.addWindowListener(new WindowAdapter() {
@@ -205,8 +205,8 @@ index 7cbae64..524c1f7 100644
      }
  
      public String getTitle() {
--        return "OLauncher " + LauncherConstants.getVersionName();
-+        return LauncherVersion.getLauncherName() + " " + LauncherVersion.getVersion(); // olauncher - update version
+-        return "Minecraft Launcher 1.6.93";
++        return "Minecraft Launcher 1.6.93";
      }
  
      public JFrame getFrame() {

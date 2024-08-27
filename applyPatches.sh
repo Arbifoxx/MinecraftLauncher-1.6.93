@@ -24,4 +24,4 @@ applyPatches() {
     fi
 }
 
-applyPatches launcher olauncher || exit 1
+applyPatches launcher minecraftlauncher || exit 1
