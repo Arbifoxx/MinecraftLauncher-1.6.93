@@ -11,7 +11,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>MinecraftLauncher</module>
+        <module>minecraftlauncher</module>
     </modules>
 
     <properties>
