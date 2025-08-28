@@ -4,7 +4,7 @@ if [ ! -f ./AutoOL/pom.xml ]; then
 	sleep 2
 	echo
 	rm -rf AutoOL
-	git clone https://github.com/waterdragon78/AutoOL
+	git clone https://github.com/arbifoxx/AutoOL
 fi
 echo
 echo "Done! Proceeding with compilation..."
