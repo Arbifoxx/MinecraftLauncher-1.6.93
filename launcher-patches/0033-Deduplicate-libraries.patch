@@ -1,0 +1,93 @@
+From a26c2f08e35570bbd7379300eb17be11e19b0c13 Mon Sep 17 00:00:00 2001
+From: bigfoot547 <bigfoot@figboot.dev>
+Date: Tue, 6 May 2025 14:37:18 -0500
+Subject: [PATCH] Deduplicate libraries
+
+
+diff --git a/src/main/java/net/minecraft/launcher/updater/CompleteMinecraftVersion.java b/src/main/java/net/minecraft/launcher/updater/CompleteMinecraftVersion.java
+index 7df3cd1..b5880c0 100644
+--- a/src/main/java/net/minecraft/launcher/updater/CompleteMinecraftVersion.java
++++ b/src/main/java/net/minecraft/launcher/updater/CompleteMinecraftVersion.java
+@@ -21,6 +21,7 @@ import java.util.Date;
+ import java.util.EnumMap;
+ import java.util.HashSet;
+ import java.util.Iterator;
++import java.util.LinkedHashMap;
+ import java.util.List;
+ import java.util.Map;
+ import java.util.Set;
+@@ -168,17 +169,17 @@ public class CompleteMinecraftVersion implements CompleteVersion {
+     }
+ 
+     public Collection<Library> getRelevantLibraries(CompatibilityRule.FeatureMatcher var1) {
+-        ArrayList var2 = new ArrayList();
+-        Iterator var3 = this.libraries.iterator();
++        // olauncher start - deduplicate libraries
++        Map<String, Library> var2 = new LinkedHashMap<>();
+ 
+-        while(var3.hasNext()) {
+-            Library var4 = (Library)var3.next();
+-            if (var4.appliesToCurrentEnvironment(var1)) {
+-                var2.add(var4);
+-            }
++        for (Library lib : this.libraries) {
++            String name = lib.getCanonicalName();
++            if (!lib.appliesToCurrentEnvironment(var1) || var2.containsKey(name)) continue;
++            var2.put(name, lib);
+         }
+ 
+-        return var2;
++        return var2.values();
++        // olauncher end
+     }
+ 
+     public Collection<File> getClassPath(OperatingSystem var1, File var2, CompatibilityRule.FeatureMatcher var3) {
+diff --git a/src/main/java/net/minecraft/launcher/updater/Library.java b/src/main/java/net/minecraft/launcher/updater/Library.java
+index f8435d1..743f4f0 100644
+--- a/src/main/java/net/minecraft/launcher/updater/Library.java
++++ b/src/main/java/net/minecraft/launcher/updater/Library.java
+@@ -9,11 +9,13 @@ import java.net.MalformedURLException;
+ import java.net.Proxy;
+ import java.net.URL;
+ import java.util.ArrayList;
++import java.util.Arrays;
+ import java.util.EnumMap;
+ import java.util.HashMap;
+ import java.util.Iterator;
+ import java.util.LinkedHashMap;
+ import java.util.List;
++import java.util.Locale;
+ import java.util.Map;
+ import java.util.Map.Entry;
+ import net.minecraft.launcher.CompatibilityRule;
+@@ -80,6 +82,27 @@ public class Library {
+ 
+     }
+ 
++    // olauncher start - deduplicate libraries
++    private String canonicalName;
++
++    public String getCanonicalName() {
++        if (canonicalName != null) {
++            return canonicalName;
++        }
++
++        List<String> parts = new ArrayList<>(Arrays.asList(this.name.toLowerCase(Locale.ROOT).split(":")));
++        if (parts.size() >= 3) {
++            parts.remove(2);
++        }
++
++        if (this.natives != null) {
++            parts.add("__NATIVES");
++        }
++
++        return (canonicalName = String.join(":", parts));
++    }
++    // olauncher end
++
+     public String getName() {
+         return this.name;
+     }
+-- 
+2.49.0
+
